@@ -1,0 +1,75 @@
+/* Set some basic styling for the chat container */
+#chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  /* Style for sent messages */
+  .message.sent {
+    align-self: flex-end;
+    background-color: #DCF8C6;
+    border-radius: 10px;
+    padding: 8px;
+    max-width: 70%;
+  }
+  
+  /* Style for received messages */
+  .message.received {
+    align-self: flex-start;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 8px;
+    max-width: 70%;
+  }
+  
+  /* Style for message timestamp */
+  .timestamp {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #666;
+  }
+
+  
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #2d88ff;
+  }
+  
+  button[type="submit"] {
+    background-color: #2d88ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1e5ab4;
+  }
+  
+  

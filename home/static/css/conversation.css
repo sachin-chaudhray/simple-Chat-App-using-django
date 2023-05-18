@@ -1,0 +1,46 @@
+.conversations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.conversation {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.conversation:hover {
+    background-color: #f2f2f2;
+}
+
+.conversation-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.conversation-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conversation-username {
+    margin: 0;
+    font-size: 20px;
+}
+
+.conversation-last-message,
+.conversation-no-message {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.conversation-timestamp {
+    font-size: 14px;
+    color: #999;
+}
+
+.no-conversations {
+    padding: 20px;
+}

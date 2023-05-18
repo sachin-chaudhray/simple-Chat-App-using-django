@@ -1,0 +1,59 @@
+ /* Style for SignupForm */
+ label {
+    display: block;
+    margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    }
+    
+    button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+    
+    /* Center the heading */
+    h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    }
+    
+    /* Style the user information */
+    p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    }
+    
+    /* Style the profile picture */
+    img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Style the "Edit Profile" button */
+   
+    
+    a:hover {
+    background-color: #3e8e41;
+    }

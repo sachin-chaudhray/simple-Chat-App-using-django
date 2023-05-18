@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock css %}
+    
+{% block content %}
+<h1>Chat with {{ user.username }}</h1>
+<div id="chat">
+{% for message in messages %}
+    <div class="message{% if message.sender == request.user %} sent{% else %} received{% endif %}">
+        <p>{{ message.content }}</p>
+        <span class="timestamp">{{ message.timestamp }}</span>
+    </div>
+{% empty %}
+    <p>No messages yet.</p>
+{% endfor %}
+</div>
+<form method="POST" action="{% url 'chat' user_id=user.id %}">
+    {% csrf_token %}
+    <input type="text" name="message" id="message">
+    <button type="submit">Send</button>
+    </form>
+{% endblock %}

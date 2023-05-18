@@ -1,0 +1,16 @@
+/* Style for UserProfileForm */
+#id_bio {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    }
+    
+    #id_profile_pic {
+    margin-top: 10px;
+    }
+   
+    
+   

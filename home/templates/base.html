@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    {% block css %}
+        
+    {% endblock css %}
+    <style>
+     /* Add background color to the navbar */
+        .navbar-default {
+          background-color: #006699;
+          border-color: #006699;
+        }
+        
+        /* Change the font color of the navbar links */
+        .navbar-default .navbar-nav > li > a {
+          color: #fff;
+        }
+        
+        /* Add hover effect to the navbar links */
+        .navbar-default .navbar-nav > li > a:hover {
+          color: #f8f8f8;
+          background-color: #005580;
+        }
+        
+        /* Add background color and border to the active navbar link */
+        .navbar-default .navbar-nav > li.active > a, 
+        .navbar-default .navbar-nav > li.active > a:hover, 
+        .navbar-default .navbar-nav > li.active > a:focus {
+          background-color: #005580;
+          border-color: #005580;
+        }
+        
+        /* Change the font color of the logo */
+        .navbar-default .navbar-brand {
+          color: #fff;
+        }
+        
+        /* Add background color to the container */
+        .container {
+          background-color: #f8f8f8;
+        }
+        
+        /* Change the font color of the page title */
+        h1 {
+          color: #006699;
+        }
+        
+        /* Change the font color of the page content */
+        p {
+          color: #333;
+        }
+        
+        </style>
+        
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">ChatterBox</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}">Welcome, {{ current_user.username }}</a></li>
+                        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

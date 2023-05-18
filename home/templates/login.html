@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="/signup/">Sign up here</a>.</p>
+        <div class="social-login">
+            <p class="social-login-text">Or log in with:</p>
+            <div class="social-login-icons">
+                <a href="#" class="social-login-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-login-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-login-icon"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
